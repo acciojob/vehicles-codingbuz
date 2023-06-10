@@ -2,32 +2,40 @@ package com.driver;
 
 public class Boat implements WaterVehicle {
     private String name;
-    private int currentSpeed;
-    private int currentDirection;
-    public Boat(String name, int currentSpeed, int currentDirection) {
+
+    private int capacity;
+
+    public Boat(String name, int capacity) {
         this.name = name;
-        this.currentSpeed = 0;
-        this.currentDirection =0;
+      this.capacity=capacity;
+    }
+    public Boat(){
+        super();
     }
 
-  public void move(int currentDirection,int currentSpeed){
-        this.currentDirection=currentDirection;
-        this.currentSpeed=currentSpeed;
-  }
-        public void steer(int direction){
-        this.currentDirection+=direction;
-        }
-  public void stop(){
-        if(currentSpeed==0){
-            return;
-        }
-  }
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    @Override
     public String getVehicleName(){
         return  this.name;
     }
+    @Override
     public int getVehicleCapacity(){
-        return 0;
+        return this.capacity;
     }
 
 }
